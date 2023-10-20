@@ -1,0 +1,34 @@
+# Road map
+
+## Lisp
+### Better diagnostics
+#### Position
+Modify the reader so to add position of tokens (file, row and columns) during tokenizer. Add position to the syntax error messagers
+#### Exceptions
+Capture exeptions during parsing/eval and better display them in the UI (add a panel with the error and the offending line with a way to click on it and position the editor there)
+
+## Addon UI
+### Enum Lisp/Py
+Add a enum with (Lisp/Python) selection. Add a Lisp Highlighting when Lisp is selected
+### Remove "T" button
+Remove the "T" button. Execution will be done with the normal "play" button. When Lisp is selected run the Lisp program else the Python one.
+### Console
+Add a console panel for program output
+### Repl
+Add a repl panel. It will appear automatically every time a repl is entered in the script.
+### Visualize the Turtle. 
+They will be normal Blender object, but when selected there will be options for customize them (visibility, shape (turtle, pencil, arrow), color, size)
+
+## Blender extension
+### blender_core.mal
+Add a library of useful stuff written in Mal
+### OpenScad
+Add all OpenScad things that can be implemented by this addon
+
+## General
+### Examples
+Provide files with examples
+### Manual
+Write a Manual, Tutorial, Reference, Video ....
+### Add to GitHub
+

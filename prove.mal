@@ -1,0 +1,27 @@
+
+
+(defn regular_polygon_path [nsides side_len]
+  (let [external_angle  (/ 360 nsides)
+        internal_angle (- 180 external_angle)
+        half_internal_angle (/ internal_angle 2)
+        radius (/ (/ side_len 2) (cos (to_radians half_internal_angle)))]
+    (fn [turtle]
+      (println (sdump_ external_angle internal_angle half_internal_angle radius))
+      (move turtle (negate radius))
+      (rotate turtle (negate half_internal_angle))
+      (dotimes [x nsides]
+        (forward turtle side_len)
+        (rotate turtle external_angle)))))
+
+(defn square [side_len]
+  (create_curve_object (regular_polygon_path 4 side_len) {:name "square"}))
+
+(defn hexagon [side_len]
+  (create_curve_object (regular_polygon_path 6 side_len) {:name "hexagon"}))
+
+
+;(square 8)
+;(hexagon 8)
+(dotimes [x 12]
+  (if (> x 2)
+    (create_curve_object (regular_polygon_path x (* 2 x)) {:name (str "polygon " x " sides")}) x))
